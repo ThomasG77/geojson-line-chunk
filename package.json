@@ -1,5 +1,5 @@
 {
-  "name": "geojson-line-chunk",
+  "name": "@webgeodatavore/geojson-line-chunk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

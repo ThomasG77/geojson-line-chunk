@@ -46,5 +46,5 @@ const args = require('yargs/yargs')(process.argv.slice(2))
   .help()
   .argv;
 
-var geojson_line_chunk = require("../index.js");
+import geojson_line_chunk from '../index.js';
 geojson_line_chunk(args);

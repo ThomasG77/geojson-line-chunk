@@ -1,5 +1,5 @@
-const fs = require('fs');
-const lineChunk = require('@turf/line-chunk');
+import fs from 'fs';
+import lineChunk from '@turf/line-chunk';
 
 function generateLineChunk(args) {
   const content = fs.readFileSync(args.input, 'utf8')
@@ -23,4 +23,4 @@ function generateLineChunk(args) {
   }
 }
 
-module.exports = generateLineChunk;
+export default generateLineChunk;

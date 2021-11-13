@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "geojson-line-chunk": "./bin/geojson-line-chunk"
+    "geojson-line-chunk": "./bin/geojson-line-chunk.js"
   },
   "type": "module",
   "dependencies": {

@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+
+const args = require('yargs/yargs')(process.argv.slice(2))
+  .option('input', {
+    alias: 'i',
+    describe: 'Input GeoJSON file'
+  })
+  .option('output', {
+    alias: 'o',
+    describe: 'Provide an output path for GeoJSON'
+  })
+  .option('distance', {
+    alias: 'd',
+    describe: "Provide a distance for splitting line. If not units specified, it's kilometers"
+  })
+  .default('units', 'kilometers')
+  .option('units', {
+    alias: 'u',
+    describe: 'Units',
+    choices: ['degrees', 'radians', 'miles', 'kilometers'],
+  })
+  .option('distance', {
+    alias: 'd',
+    describe: "Provide a distance for splitting line. If not units specified, it's kilometers"
+  })
+  .default('reverse', false)
+  .boolean('reverse')
+  .option('reverse', {
+    alias: 'r',
+    describe: "Reverses coordinates to start the first chunked segment at the end. Default to false"
+  })
+  .check((argv, options) => {
+    if (argv._ && argv._.includes('-')) {
+      argv.input = 0;
+    }
+    if (!('output' in argv)) {
+      argv.output = 0;
+    }
+    if (!('input' in argv)) {
+      throw new Error("You need to provide an input file from --input option or use an entry from stdin with - option e.g `cat myfile.geojson |  node index.js --output out.json --distance 50 --units kilometers -`")
+      } else {
+      return true // tell Yargs that the arguments passed the check
+    }
+  })
+  .demandOption(['distance'], 'Please provide both run and path arguments to work with this tool')
+  .help()
+  .argv;
+
+var geojson_line_chunk = require("../index.js");
+geojson_line_chunk(args);

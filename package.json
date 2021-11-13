@@ -1,0 +1,20 @@
+{
+  "name": "geojson-line-chunk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "geojson-line-chunk": "./bin/geojson-line-chunk"
+  },
+  "dependencies": {
+    "@turf/line-chunk": "^6.5.0",
+    "yargs": "^17.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["geojson", "turf", "line-chunk"],
+  "author": "Thomas Gratier",
+  "license": "MIT"
+}

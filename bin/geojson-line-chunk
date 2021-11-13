@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-const args = require('yargs/yargs')(process.argv.slice(2))
+import yargs from 'yargs';
+
+const args = yargs(process.argv.slice(2))
   .option('input', {
     alias: 'i',
     describe: 'Input GeoJSON file. You can use stdin if using - option'

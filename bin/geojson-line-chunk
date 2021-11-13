@@ -3,11 +3,11 @@
 const args = require('yargs/yargs')(process.argv.slice(2))
   .option('input', {
     alias: 'i',
-    describe: 'Input GeoJSON file'
+    describe: 'Input GeoJSON file. You can use stdin if using - option'
   })
   .option('output', {
     alias: 'o',
-    describe: 'Provide an output path for GeoJSON'
+    describe: 'Provide an output path for GeoJSON. If not used, output goes to stdout'
   })
   .option('distance', {
     alias: 'd',
@@ -39,10 +39,10 @@ const args = require('yargs/yargs')(process.argv.slice(2))
     if (!('input' in argv)) {
       throw new Error("You need to provide an input file from --input option or use an entry from stdin with - option e.g `cat myfile.geojson |  node index.js --output out.json --distance 50 --units kilometers -`")
       } else {
-      return true // tell Yargs that the arguments passed the check
+      return true
     }
   })
-  .demandOption(['distance'], 'Please provide both run and path arguments to work with this tool')
+  .demandOption(['distance'], 'Please provide a --distance argument, an --input from file or stdin with - option')
   .help()
   .argv;
 

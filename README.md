@@ -4,10 +4,8 @@ Only working on GeoJSON with `featureCollection` as input. It output GeoJSON
 
 ## Install
 
-Not available on NPM at the moment, so do an install from github repo with
-
 ```bash
-npm i ThomasG77/geojson-line-chunk -g
+npm i @webgeodatavore/geojson-line-chunk -g
 ```
 
 ## Examples

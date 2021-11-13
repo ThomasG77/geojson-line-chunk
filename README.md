@@ -16,7 +16,9 @@ npm i ThomasG77/geojson-line-chunk -g
 cat mygeojson.json | geojson-line-chunk --distance 500 --units kilometers -
 ```
 
+```bash
 geojson-line-chunk --input myinput.json --distance 500 --units kilometers --output myoutput.json
+```
 
 ## Help content
 
